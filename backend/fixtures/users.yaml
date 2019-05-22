@@ -1,0 +1,3 @@
+App\Entity\User:
+  mma:
+    displayName: MMA
