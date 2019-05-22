@@ -1,0 +1,57 @@
+App\Entity\Resource:
+  water:
+    name: Water
+    hasStorageLimit: true
+    hasBoxStorage: true
+    hasStorageProtection: true
+    hasProductionRate: true
+    canBeLooted: false
+  food:
+    name: Food
+    hasStorageLimit: true
+    hasBoxStorage: true
+    hasStorageProtection: true
+    hasProductionRate: true
+    canBeLooted: true
+  fuel:
+    name: Fuel
+    hasStorageLimit: true
+    hasBoxStorage: true
+    hasStorageProtection: true
+    hasProductionRate: true
+    canBeLooted: true
+  electricity:
+    name: Electricity
+    hasStorageLimit: true
+    hasBoxStorage: true
+    hasStorageProtection: true
+    hasProductionRate: true
+    canBeLooted: false
+  lumber:
+    name: Lumber
+    hasStorageLimit: true
+    hasBoxStorage: true
+    hasStorageProtection: true
+    hasProductionRate: true
+    canBeLooted: true
+  iron:
+    name: Iron
+    hasStorageLimit: true
+    hasBoxStorage: true
+    hasStorageProtection: true
+    hasProductionRate: true
+    canBeLooted: true
+  money:
+    name: Money
+    hasStorageLimit: false
+    hasBoxStorage: true
+    hasStorageProtection: true
+    hasProductionRate: true
+    canBeLooted: true
+  diamond:
+    name: Diamond
+    hasStorageLimit: false
+    hasBoxStorage: true
+    hasStorageProtection: false
+    hasProductionRate: false
+    canBeLooted: false
