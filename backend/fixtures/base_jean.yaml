@@ -1,0 +1,7 @@
+App\Entity\Base:
+  jean:
+    user: '@user_mma'
+    name: 'Jean-Nub Picard'
+    level: 17
+    type: 'Farm'
+    class: 'Trader'

@@ -1,0 +1,62 @@
+App\Entity\Base:
+  main:
+    user: '@user_mma'
+    name: 'Boobs Fighter'
+    level: 24
+    type: 'Main'
+    class: 'Raider'
+
+App\Entity\BaseResource:
+  main_food:
+    base: '@main'
+    resource: '@food'
+    storageAmount: 1500000
+    storageAmountTimestamp: 1558984685
+    boxAmount: 484600000
+    storageLimit: 117500000
+    productionRate: 148000
+  main_water:
+    base: '@main'
+    resource: '@water'
+    storageAmount: 8700000
+    storageAmountTimestamp: 1558984685
+    boxAmount: 0
+    storageLimit: 10500000
+    productionRate: 205900
+  main_fuel:
+    base: '@main'
+    resource: '@fuel'
+    storageAmountTimestamp: 1558984685
+    boxAmount: 110800000
+    storageLimit: 126500000
+  main_electricity:
+    base: '@main'
+    resource: '@electricity'
+    storageAmount: 216000000
+    storageAmountTimestamp: 1558984685
+    boxAmount: 647500
+    storageLimit: 22500000
+    productionRate: 0
+  main_lumber:
+    base: '@main'
+    resource: '@lumber'
+    storageAmount: 7400000
+    storageAmountTimestamp: 1558984685
+    boxAmount: 81700000
+    storageLimit: 117500000
+    productionRate: 83200
+  main_iron:
+    base: '@main'
+    resource: '@iron'
+    storageAmount: 1400000
+    storageAmountTimestamp: 1558984685
+    boxAmount: 22300000
+    storageLimit: 76500000
+    productionRate: 56800
+  main_money:
+    base: '@main'
+    resource: '@money'
+    storageAmount: 56700000
+    storageAmountTimestamp: 1558984685
+    boxAmount: 103900000
+    productionRate: 76900

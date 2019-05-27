@@ -1,0 +1,7 @@
+App\Entity\Base:
+  nooby:
+    user: '@user_mma'
+    name: 'Nooby Doo'
+    level: 17
+    type: 'Farm'
+    class: 'Trader'

@@ -1,0 +1,33 @@
+App\Entity\Base:
+  nooberman:
+    user: '@user_mma'
+    name: 'Nooberman'
+    level: 17
+    type: 'Farm'
+    class: 'Trader'
+
+App\Entity\BaseResource:
+  nooberman_fuel:
+    base: '@nooberman'
+    resource: '@fuel'
+    storageAmount: 7000000
+    storageAmountTimestamp: 1558984685
+    boxAmount: 8600000
+    storageLimit: 14500000
+    productionRate: 90400
+  nooberman_lumber:
+    base: '@nooberman'
+    resource: '@lumber'
+    storageAmount: 5200000
+    storageAmountTimestamp: 1558984685
+    boxAmount: 5600000
+    storageLimit: 8500000
+    productionRate: 63100
+  nooberman_iron:
+    base: '@nooberman'
+    resource: '@iron'
+    storageAmount: 3300000
+    storageAmountTimestamp: 1558984685
+    boxAmount: 4200000
+    storageLimit: 9500000
+    productionRate: 39000

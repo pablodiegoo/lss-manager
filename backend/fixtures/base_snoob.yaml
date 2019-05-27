@@ -1,0 +1,7 @@
+App\Entity\Base:
+  snoob:
+    user: '@user_mma'
+    name: 'Snoob Dog'
+    level: 15
+    type: 'Farm'
+    class: 'Farmer'

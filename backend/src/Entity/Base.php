@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -42,6 +44,16 @@ class Base
      * @ORM\Column(type="string", length=255)
      */
     private $class;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\BaseResource", mappedBy="base", orphanRemoval=true)
+     */
+    private $baseResources;
+
+    public function __construct()
+    {
+        $this->baseResources = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -100,6 +112,37 @@ class Base
     public function setClass(string $class): self
     {
         $this->class = $class;
+        return $this;
+    }
+
+    /**
+     * @return Collection|BaseResource[]
+     */
+    public function getBaseResources(): Collection
+    {
+        return $this->baseResources;
+    }
+
+    public function addBaseResource(BaseResource $baseResource): self
+    {
+        if (!$this->baseResources->contains($baseResource)) {
+            $this->baseResources[] = $baseResource;
+            $baseResource->setBase($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBaseResource(BaseResource $baseResource): self
+    {
+        if ($this->baseResources->contains($baseResource)) {
+            $this->baseResources->removeElement($baseResource);
+            // set the owning side to null (unless already changed)
+            if ($baseResource->getBase() === $this) {
+                $baseResource->setBase(null);
+            }
+        }
+
         return $this;
     }
 }

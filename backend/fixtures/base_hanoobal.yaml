@@ -1,0 +1,7 @@
+App\Entity\Base:
+  hanoobal:
+    user: '@user_mma'
+    name: 'Hanoobal Lecter'
+    level: 15
+    type: 'Farm'
+    class: 'Farmer'
