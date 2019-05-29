@@ -60,6 +60,7 @@
     "require-dev": {
         "hautelook/alice-bundle": "^2.5",
         "symfony/maker-bundle": "^1.11",
+        "symfony/var-dumper": "4.2.*",
         "symfony/web-server-bundle": "4.2.*"
     }
 }
