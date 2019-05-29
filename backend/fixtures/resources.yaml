@@ -5,13 +5,14 @@ App\Entity\Resource:
     hasBoxStorage: true
     hasStorageProtection: true
     hasProductionRate: true
-    canBeLooted: false
+    hasConsumptionRate: true
   food:
     name: Food
     hasStorageLimit: true
     hasBoxStorage: true
     hasStorageProtection: true
     hasProductionRate: true
+    hasConsumptionRate: true
     canBeLooted: true
   fuel:
     name: Fuel
@@ -19,6 +20,7 @@ App\Entity\Resource:
     hasBoxStorage: true
     hasStorageProtection: true
     hasProductionRate: true
+    hasConsumptionRate: true
     canBeLooted: true
   electricity:
     name: Electricity
@@ -26,7 +28,6 @@ App\Entity\Resource:
     hasBoxStorage: true
     hasStorageProtection: true
     hasProductionRate: true
-    canBeLooted: false
   lumber:
     name: Lumber
     hasStorageLimit: true
@@ -43,15 +44,10 @@ App\Entity\Resource:
     canBeLooted: true
   money:
     name: Money
-    hasStorageLimit: false
     hasBoxStorage: true
     hasStorageProtection: true
     hasProductionRate: true
     canBeLooted: true
   diamond:
     name: Diamond
-    hasStorageLimit: false
     hasBoxStorage: true
-    hasStorageProtection: false
-    hasProductionRate: false
-    canBeLooted: false

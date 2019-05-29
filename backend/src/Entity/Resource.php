@@ -23,29 +23,34 @@ class Resource
     private $name;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", options={"default": false})
      */
-    private $hasStorageLimit;
+    private $hasStorageLimit = false;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", options={"default": false})
      */
-    private $hasBoxStorage;
+    private $hasBoxStorage = false;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", options={"default": false})
      */
-    private $hasStorageProtection;
+    private $hasStorageProtection = false;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", options={"default": false})
      */
-    private $hasProductionRate;
+    private $hasProductionRate = false;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", options={"default": false})
      */
-    private $canBeLooted;
+    private $hasConsumptionRate = false;
+
+    /**
+     * @ORM\Column(type="boolean", options={"default": false})
+     */
+    private $canBeLooted = false;
 
     public function getId(): ?int
     {
@@ -104,6 +109,17 @@ class Resource
     public function setHasProductionRate(bool $hasProductionRate): self
     {
         $this->hasProductionRate = $hasProductionRate;
+        return $this;
+    }
+
+    public function getHasConsumptionRate(): ?bool
+    {
+        return $this->hasConsumptionRate;
+    }
+
+    public function setHasConsumptionRate(bool $hasConsumptionRate): self
+    {
+        $this->hasConsumptionRate = $hasConsumptionRate;
         return $this;
     }
 

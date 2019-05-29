@@ -35,7 +35,7 @@ class BaseResource
     private $storageAmount = 0;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $storageAmountTimestamp;
 
@@ -58,6 +58,11 @@ class BaseResource
      * @ORM\Column(type="bigint", options={"default": 0})
      */
     private $productionRate = 0;
+
+    /**
+     * @ORM\Column(type="bigint", options={"default": 0})
+     */
+    private $consumptionRate = 0;
 
     public function getId(): ?int
     {
@@ -149,6 +154,17 @@ class BaseResource
     public function setProductionRate(int $productionRate): self
     {
         $this->productionRate = $productionRate;
+        return $this;
+    }
+
+    public function getConsumptionRate(): ?int
+    {
+        return $this->consumptionRate;
+    }
+
+    public function setConsumptionRate(int $consumptionRate): self
+    {
+        $this->consumptionRate = $consumptionRate;
         return $this;
     }
 }
