@@ -8,7 +8,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-/** @Route("/api/building-upgrades") */
+/** @Route("/api/building-day") */
 class BuildingDayController extends AbstractController
 {
     /**
@@ -27,14 +27,16 @@ class BuildingDayController extends AbstractController
     public function getData()
     {
         /** @var Base[] $bases */
-        $bases = $this->em->getRepository(Base::class)->findBy([], ['type' => 'DESC']);
+        $orderBy = ['type' => 'DESC', 'level' => 'DESC', 'name' => 'ASC'];
+        $bases = $this->em->getRepository(Base::class)->findBy([], $orderBy);
 
         $basesArray = [];
         foreach ($bases as $base) {
-            $basesArray[$base->getId()] = [
+            $basesArray[] = [
                 'id' => $base->getId(),
                 'name' => $base->getName(),
                 'level' => $base->getLevel(),
+                'type' => $base->getType(),
             ];
         }
 
@@ -43,7 +45,7 @@ class BuildingDayController extends AbstractController
 
         $resourcesArray = [];
         foreach ($resources as $resource) {
-            $resourcesArray[$resource->getId()] = [
+            $resourcesArray[] = [
                 'id' => $resource->getId(),
                 'name' => $resource->getName(),
             ];
