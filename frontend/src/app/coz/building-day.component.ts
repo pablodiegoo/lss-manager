@@ -37,7 +37,10 @@ export class CozBuildingDayComponent implements OnInit {
                     row.resources = {} as any;
 
                     for (const resource of response.resources) {
-                        row.resources[resource.name] = 0;
+                        row.resources[resource.name] = {
+                            storage: 1,
+                            storageBox: 2,
+                        };
                     }
 
                     this.dataSource.push(row);
