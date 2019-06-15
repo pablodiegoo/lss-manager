@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {CozBuildingDayResource, CozBuildingDayResponse} from './buliding/reponse';
+import {CozBuildingDayBase, CozBuildingDayResource, CozBuildingDayResponse} from './buliding/reponse';
 import {CozService} from './coz.service';
 
 @Component({
@@ -7,10 +7,10 @@ import {CozService} from './coz.service';
     styles: ['table {width: 100%;}']
 })
 export class CozBuildingDayComponent implements OnInit {
-    private readonly defaultColumns = ['base'];
-
+    bases: CozBuildingDayBase[];
     resources: CozBuildingDayResource[];
-    columnNames: string[] = [];
+    baseColumns: string[] = [];
+    baseColumns2: string[] = [];
     dataSource = [];
 
     constructor(
@@ -21,32 +21,41 @@ export class CozBuildingDayComponent implements OnInit {
     ngOnInit(): void {
         this.cozService.getBuildingData().subscribe(
             (response: CozBuildingDayResponse) => {
-                console.log(response);
-
                 this.resources = response.resources;
-                this.columnNames = this.defaultColumns.slice(0);
+                this.bases = response.bases;
 
+                this.baseColumns = ['base'];
+                this.baseColumns2 = [];
                 for (const resource of response.resources) {
-                    this.columnNames.push(resource.name);
+                    this.baseColumns.push(resource.name);
+                    this.baseColumns2.push('storage');
+                    this.baseColumns2.push('box');
                 }
 
                 for (const base of response.bases) {
                     const row: any = {};
 
-                    row.base = base.name + '<br>' + base.type + '<br>Lvl. ' + base.level;
+                    row.base = base;
                     row.resources = {} as any;
 
                     for (const resource of response.resources) {
+                        const storage = 1;
+                        const box = 2;
+                        const computedStorage = storage;
+
                         row.resources[resource.name] = {
-                            storage: 1,
-                            storageBox: 2,
+                            storage,
+                            box,
+                            computedStorage,
                         };
                     }
 
                     this.dataSource.push(row);
                 }
 
-                console.log(this.dataSource);
+                console.log(this.bases);
+                console.log(this.baseColumns);
+                console.log(this.baseColumns2);
             },
             error => console.log('ERROR', error),
         );
